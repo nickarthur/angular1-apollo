@@ -1,6 +1,6 @@
 {
   "name": "angular1-apollo",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Angular 1.0 client for Apollo",
   "main": "build/src/index.js",
   "typings": "build/src/index.d.ts",
@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/apollostack/angular1-apollo#readme",
   "peerDependencies": {
-    "apollo-client": "^0.8.0",
+    "apollo-client": ">=0.8.0 <=0.10.1 || >=1.0.0-rc <2.0.0",
     "angular": ">=1.2.0",
     "rxjs": "^5.0.0-beta.12 || ^5.0.0-rc.1 || ^5.0.0"
   },
@@ -28,11 +28,12 @@
     "apollo-client-rxjs": "~0.4.1"
   },
   "devDependencies": {
-    "@types/angular": "^1.5.13",
-    "@types/node": "^7.0.3",
-    "angular": "^1.6.1",
-    "apollo-client": "^0.8.0",
+    "@types/angular": "^1.6.20",
+    "@types/node": "^8.0.1",
+    "angular": "^1.6.4",
+    "apollo-client": "^1.4.2",
+    "graphql-tag": "^2.4.2",
     "rxjs": "^5.0.0",
-    "typescript": "~2.0.6"
+    "typescript": "~2.3.4"
   }
 }
