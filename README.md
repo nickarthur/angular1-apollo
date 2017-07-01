@@ -32,7 +32,7 @@ import AngularApollo from 'angular1-apollo'
 import ApolloClient from 'apollo-client';
 
 angular.module('app', [
-  'angular-apollo'
+  AngularApollo
 ]).config((apolloProvider) => {
   const client = new ApolloClient();
 
