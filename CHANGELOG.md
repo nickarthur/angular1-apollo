@@ -2,6 +2,8 @@
 
 ### vNEXT
 
+### v0.3.0
+
 - Export the name of the Module as default ([PR #32](https://github.com/apollographql/angular1-apollo/pull/32))
 
 ### v0.2.2
