@@ -38,12 +38,11 @@ angular.module('app', [
 
 
 ```ts
-import AngularApollo from 'angular1-apollo'
+import angularApollo, { ApolloProvider } from 'angular1-apollo'
 import ApolloClient from 'apollo-client';
-import { ApolloProvider } from 'angular1-apollo';
 
 angular.module('app', [
-  AngularApollo
+  angularApollo
 ]).config(['apolloProvider', (apolloProvider: ApolloProvider) => {
   const client = new ApolloClient();
 
