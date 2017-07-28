@@ -64,9 +64,5 @@ export class ApolloProvider implements angular.IServiceProvider {
   }
 }
 
-export const name = 'apollo'
-
-angular.module(name, [])
-  .provider('apollo', new ApolloProvider);
-
-export default name;
+export default angular.module(name, [])
+  .provider('apollo', new ApolloProvider).name;

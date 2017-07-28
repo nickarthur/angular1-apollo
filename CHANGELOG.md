@@ -6,6 +6,10 @@
 - Expose interfaces of `Apollo` service and `ApolloProvider` ([PR #7](https://github.com/apollostack/angular1-apollo/pull/7))
 - **BREAKING CHANGE:** Change the name of the module to just `apollo`, instead of `angular-apollo` ([PR #7](https://github.com/apollostack/angular1-apollo/pull/7))
 
+### v0.3.0
+
+- Export the name of the Module as default ([PR #32](https://github.com/apollographql/angular1-apollo/pull/32))
+
 ### v0.2.2
 
 - Support more versions of `apollo-client` and the release candidate ([PR #25](https://github.com/apollographql/angular1-apollo/pull/25))

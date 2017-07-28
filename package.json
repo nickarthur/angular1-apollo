@@ -1,6 +1,6 @@
 {
   "name": "angular1-apollo",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Angular 1.0 client for Apollo",
   "main": "build/src/index.js",
   "typings": "build/src/index.d.ts",
