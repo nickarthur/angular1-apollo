@@ -1,23 +1,32 @@
-import { ApolloQueryResult } from 'apollo-client';
-
-import ApolloClient from 'apollo-client';
 import * as angular from 'angular';
+import { FetchResult } from 'apollo-link';
+import {
+  ApolloClient,
+  ApolloQueryResult,
+  WatchQueryOptions,
+  MutationOptions,
+} from 'apollo-client';
+
+import { TypedVariables } from './types';
+
+export type R = Record<string, any>;
 
 class Apollo {
-  constructor(
-    private client: ApolloClient, 
-    private $q: any
-  ) {}
+  constructor(private client: ApolloClient<any>, private $q: any) {}
 
-  public query<T>(options: any): angular.IPromise<ApolloQueryResult<T>> {
+  public query<T, V = R>(
+    options: WatchQueryOptions & TypedVariables<V>,
+  ): angular.IPromise<ApolloQueryResult<T>> {
     this.check();
-    
+
     return this.wrap(this.client.query<T>(options));
-  } 
+  }
 
-  public mutate<T>(options: any): angular.IPromise<ApolloQueryResult<T>> {
+  public mutate<T, V = R>(
+    options: MutationOptions & TypedVariables<V>,
+  ): angular.IPromise<FetchResult<T>> {
     this.check();
-    
+
     return this.wrap(this.client.mutate<T>(options));
   }
 
@@ -35,14 +44,15 @@ class Apollo {
 }
 
 class ApolloProvider implements angular.IServiceProvider {
-  private client: ApolloClient;
-  
-  public $get = ['$q', ($q) => new Apollo(this.client, $q)];
-  
-  public defaultClient(client: ApolloClient) {
+  private client: ApolloClient<any>;
+
+  public $get = ['$q', $q => new Apollo(this.client, $q)];
+
+  public defaultClient(client: ApolloClient<any>) {
     this.client = client;
   }
 }
 
-export default angular.module('angular-apollo', [])
-  .provider('apollo', new ApolloProvider).name;
+export default angular
+  .module('angular-apollo', [])
+  .provider('apollo', new ApolloProvider()).name;

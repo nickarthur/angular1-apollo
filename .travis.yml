@@ -1,14 +1,12 @@
 sudo: false
-
+addons:
+  chrome: stable
 language: node_js
-
 node_js:
   - "6"
-
 cache:
   directories:
     - $HOME/.npm
     - node_modules
-
 notifications:
   email: false

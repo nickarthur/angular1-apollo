@@ -2,32 +2,46 @@
   "name": "angular1-apollo",
   "version": "0.3.0",
   "description": "Angular 1.0 client for Apollo",
-  "main": "build/src/index.js",
+  "main": "build/index.js",
   "scripts": {
-    "build": "tsc",
-    "prepublish": "npm run build",
-    "test": "npm run build"
+    "build": "tsc -p tsconfig.build.json",
+    "build-test": "tsc -p tsconfig.test.json",
+    "test": "./node_modules/karma/bin/karma start karma.conf.js --single-run",
+    "test-watch": "npm run test -- --auto-watch --no-single-run",
+    "pretest": "npm run build-test",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/apollostack/angular1-apollo.git"
+    "url": "git+https://github.com/apollographql/angular1-apollo.git"
   },
   "author": "Kamil Kisiela <kamil.kisiela@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/apollostack/angular1-apollo/issues"
+    "url": "https://github.com/apollographql/angular1-apollo/issues"
   },
-  "homepage": "https://github.com/apollostack/angular1-apollo#readme",
+  "homepage": "https://github.com/apollographql/angular1-apollo#readme",
   "peerDependencies": {
-    "apollo-client": ">=0.8.0 <=0.10.1 || >=1.0.0-rc <2.0.0",
+    "apollo-client": "^2.0.0",
+    "apollo-link": "^1.0.0",
     "angular": ">=1.2.0"
   },
   "devDependencies": {
     "@types/angular": "^1.6.20",
+    "@types/jasmine": "^2.8.2",
     "@types/node": "^8.0.1",
     "angular": "^1.6.4",
-    "apollo-client": "^1.4.2",
-    "graphql-tag": "^2.4.2",
-    "typescript": "~2.3.4"
+    "angular-mocks": "^1.6.8",
+    "apollo-client": "^2.0.4",
+    "apollo-link": "^1.0.7",
+    "graphql": "^0.12.3",
+    "graphql-tag": "^2.6.1",
+    "jasmine-core": "^2.8.0",
+    "karma": "^2.0.0",
+    "karma-browserify": "^5.1.2",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.1",
+    "puppeteer": "^0.13.0",
+    "typescript": "^2.6.2"
   }
 }

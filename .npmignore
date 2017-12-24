@@ -1,6 +1,10 @@
 .vscode/
 build/tests/
 src/
+tests/
 .travis.yml
 CHANGELOG.md
 tsconfig.json
+tsconfig.build.json
+tsconfig.test.json
+karma.conf.js
